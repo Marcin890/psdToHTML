@@ -1,0 +1,94 @@
+// VARIABLES
+
+// colors
+$primary-color: #ffffff;
+$dark-bg-color: #2a3b40;
+$bright-bg-color: #d4d8d9;
+$headers-color: #ad6c12;
+$text-dark: #2c3a42;
+
+// fonts
+$primary-font: "Raleway", sans-serif;
+$secondary-font: "Cookie", cursive;
+
+// trasition
+$transition: 0.8s;
+
+// opacity
+$opacity: 0.9;
+
+// section-wrapper
+$section-wrapper-width: 1080px;
+$section-wrapper-margin: 0 auto;
+
+// section with image padding
+$section-padding: 90px 0;
+
+// MIXINS
+@mixin section-wrapper {
+  max-width: $section-wrapper-width;
+  margin: $section-wrapper-margin;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 15px;
+  z-index: 0;
+}
+@mixin background-image {
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin background-opacity {
+  background-color: $primary-color;
+  opacity: $opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@mixin grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+@mixin column {
+  flex-basis: 100%;
+  padding: 15px;
+}
+
+// breakpoints
+$breakpoints: (
+  xs: (
+    min-width: 460px
+  ),
+  s: (
+    min-width: 640px
+  ),
+  m: (
+    min-width: 800px
+  ),
+  l: (
+    min-width: 1024px
+  ),
+  xl: (
+    min-width: 1200px
+  )
+);
+
+// media query
+@mixin mq($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  @if ($size) {
+    @media #{$size} {
+      @content;
+    }
+  } @else {
+    @error '"#{$breakpoint}" - Nie rozpoznaje';
+  }
+}

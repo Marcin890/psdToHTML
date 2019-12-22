@@ -1,0 +1,550 @@
+// title
+.title {
+  &__first {
+    color: $text-dark;
+    font-family: $secondary-font;
+    font-weight: normal;
+    font-size: 7.1rem;
+    margin-bottom: 20px;
+    flex-basis: 100%;
+    &--big {
+      font-size: 5rem;
+      @include mq(m) {
+        font-size: 8rem;
+      }
+    }
+    &--white {
+      color: $primary-color;
+    }
+  }
+  &__second {
+    text-transform: uppercase;
+    color: $headers-color;
+    margin-top: -20px;
+    flex-basis: 100%;
+
+    &--big {
+      margin-bottom: 30px;
+      font-size: 3.5rem;
+      @include mq(m) {
+        font-size: 5.5rem;
+      }
+    }
+  }
+}
+
+// header
+.header {
+  background-image: url(../../public/images/header-bg-xs.jpg);
+  @include mq(s) {
+    background-image: url(../../public/images/header-bg-s.jpg);
+  }
+  @include mq(m) {
+    background-image: url(../../public/images/header-bg-m.jpg);
+  }
+  @include mq(l) {
+    background-image: url(../../public/images/header-bg-l.jpg);
+  }
+  @include mq(xl) {
+    background-image: url(../../public/images/header-bg-xl.jpg);
+  }
+  @include background-image;
+  &__wrapper {
+    @include section-wrapper;
+    z-index: 999;
+  }
+  padding: $section-padding;
+}
+// Logo
+.logo {
+  flex-grow: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 35px;
+  &__link {
+    color: $primary-color;
+    text-decoration: none;
+    &:hover {
+      color: $headers-color;
+      transition: $transition;
+    }
+  }
+}
+// Nav
+.nav {
+  &__list {
+    display: block;
+    margin-top: 180px;
+    list-style-type: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+  }
+  &__item {
+    text-align: right;
+    margin-right: 50px;
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: $dark-bg-color;
+      transition: $transition;
+    }
+  }
+
+  &__wrapper {
+    display: none;
+  }
+
+  &__mobile {
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    right: 50px;
+    top: 90px;
+    z-index: 3;
+    background-color: $headers-color;
+    padding: 15px;
+    &:hover {
+      background-color: $dark-bg-color;
+      transition: $transition;
+    }
+  }
+  &__responsive {
+    width: 100%;
+    background: $headers-color;
+    display: block;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+// Banner
+.banner {
+  max-width: 90%;
+  margin: 60px auto;
+  padding: $section-padding;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  @include mq(m) {
+    max-width: 850px;
+  }
+  &__btn {
+    background-color: $headers-color;
+    padding: 24px 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    color: $primary-color;
+    margin-top: 15px;
+    &:hover {
+      background-color: $dark-bg-color;
+      color: white;
+      transition: $transition;
+    }
+  }
+  &__bg {
+    @include background-opacity;
+  }
+}
+
+// traditional
+.traditional {
+  background-color: $dark-bg-color;
+  padding: $section-padding;
+  &__wrapper {
+    @include section-wrapper;
+  }
+  &__grid {
+    @include grid;
+    align-items: center;
+  }
+  &__column {
+    @include column;
+    @include mq(m) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__title {
+    @include mq(m) {
+      text-align: left;
+    }
+  }
+  &__text {
+    margin-bottom: 50px;
+    text-align: center;
+    @include mq(m) {
+      text-align: left;
+    }
+  }
+  &__image {
+    display: block;
+    margin: 0 auto;
+  }
+}
+// new
+.new {
+  background-color: $bright-bg-color;
+  color: $text-dark;
+  padding: $section-padding;
+  &__wrapper {
+    @include section-wrapper;
+    text-align: center;
+  }
+  &__text {
+    margin-bottom: 35px;
+  }
+  &__column {
+    @include column;
+    @include mq(m) {
+      flex-basis: 33%;
+    }
+  }
+}
+// dot
+.dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: $text-dark;
+  display: inline-block;
+  margin: 0px 1px 30px 1px;
+  &:hover {
+    background-color: $headers-color;
+    transition: $transition;
+  }
+  @include mq(m) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+// dishes
+.dishes {
+  background-image: url(../../public/images/dishes-bg.jpg);
+  @include background-image;
+  padding: $section-padding;
+  text-align: center;
+  &__wrapper {
+    @include section-wrapper;
+    padding: 0;
+    padding-top: 50px;
+  }
+  &__bg {
+    @include background-opacity;
+  }
+
+  &__grid {
+    @include grid;
+    align-items: center;
+  }
+  &__column {
+    flex-basis: 50%;
+    @include mq(l) {
+      flex-basis: 25%;
+    }
+  }
+  &__img {
+    width: 100%;
+    background: red;
+  }
+  &__text-wrapper {
+    color: $text_dark;
+    text-align: center;
+    width: 100%;
+  }
+  &__text {
+    margin-bottom: 24px;
+  }
+  &__price {
+    font-weight: bold;
+  }
+  &__grid {
+    @include grid;
+  }
+}
+
+// made-easy
+.made-easy {
+  background-color: $bright-bg-color;
+  padding: $section-padding;
+  text-align: center;
+  color: $text-dark;
+  &__wrapper {
+    max-width: $section-wrapper-width;
+    margin: $section-wrapper-margin;
+  }
+  &__title {
+    margin-bottom: 38px;
+  }
+  &__text {
+    margin-bottom: 50px;
+    padding: 0 50px;
+  }
+  &__dots {
+    margin-bottom: 50px;
+  }
+
+  &__menu-item {
+    display: inline;
+    font-weight: bold;
+    padding: 0 5px;
+    margin: 0 2px;
+    @include mq(m) {
+      margin: 0 25px;
+    }
+  }
+}
+// menu
+.menu {
+  background-image: url(../../public/images/menu-bg.jpg);
+  @include background-image;
+  padding: $section-padding;
+  text-align: left;
+  &__grid {
+    @include grid;
+  }
+  &__column {
+    @include column;
+    padding: 0;
+    @include mq(m) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__wrapper {
+    @include section-wrapper;
+    padding: 50px 5px;
+    @include mq(m) {
+      padding: 50px;
+    }
+  }
+
+  &__bg {
+    @include background-opacity;
+  }
+
+  &__meal-icon {
+    display: flex;
+    background: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  &__meal-image {
+    display: block;
+  }
+  &__meal-title {
+    color: $dark-bg-color;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  &__meal-desc {
+    color: $dark-bg-color;
+  }
+  &__meal-grid {
+    margin-bottom: 55px;
+    @include grid;
+    flex-wrap: nowrap;
+  }
+}
+
+// book
+.book {
+  padding-top: 70px;
+  padding-bottom: 40px;
+  background: $dark-bg-color;
+  &__wrapper {
+    @include section-wrapper;
+  }
+}
+
+// form
+.form {
+  padding: $section-padding;
+  &__grid {
+    @include grid;
+  }
+
+  &__column {
+    @include column;
+    flex-wrap: wrap;
+    display: flex;
+    @include mq(m) {
+      flex-basis: 33%;
+    }
+  }
+  &__label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    flex-basis: 100%;
+  }
+  &__select {
+    flex-basis: 100%;
+  }
+  &__text {
+    flex-basis: 100%;
+  }
+  &__date {
+    flex-basis: 100%;
+  }
+  &__submit {
+    flex-basis: 100%;
+    text-transform: uppercase;
+    margin-top: 24px;
+    &:hover {
+      border: $headers-color 1px solid;
+      transition: $transition;
+    }
+  }
+}
+
+.break {
+  min-height: 500px;
+  background-image: url(../../public/images/second-break-2.jpg);
+  @include background-image;
+}
+
+// discover
+.discover {
+  padding: $section-padding;
+  background: $bright-bg-color;
+  &__wrapper {
+    @include section-wrapper;
+  }
+  &__title {
+    flex-basis: 100%;
+    text-align: center;
+    font-family: $secondary-font;
+    color: $dark-bg-color;
+    font-size: 7.7rem;
+  }
+
+  &__subtitle {
+    flex-basis: 100%;
+    text-align: center;
+    color: $headers-color;
+    text-transform: uppercase;
+    font-size: 4.4rem;
+    margin-bottom: 54px;
+  }
+}
+
+//menu-card
+.menu-card {
+  @include grid;
+  &__column {
+    @include column;
+    @include mq(m) {
+      flex-basis: 33%;
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+  &__text-wrapper {
+    background: $primary-color;
+    padding: 25px;
+    color: $dark-bg-color;
+  }
+  &__meta {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 29px;
+  }
+  &__title {
+    font-size: 1.6rem;
+    margin-bottom: 13px;
+  }
+  &__text {
+    margin-bottom: 30px;
+  }
+  &__read-more {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  &__link {
+    border-bottom: 3px #ff992b solid;
+    padding-bottom: 5px;
+    color: $dark-bg-color;
+    text-decoration: none;
+    &:hover {
+      color: $headers-color;
+      border-bottom: 3px $dark-bg-color solid;
+      transition: $transition;
+    }
+  }
+}
+
+// testimonial
+.testimonial {
+  padding: $section-padding;
+  background: $dark-bg-color;
+  text-align: center;
+  &__wrapper {
+    @include section-wrapper;
+    display: block;
+  }
+  &__sign {
+    font-size: 8.3rem;
+    margin-bottom: 34px;
+    font-weight: bold;
+  }
+  &__text {
+    font-size: 1.8rem;
+    margin-bottom: 31px;
+    padding: 0 20px;
+  }
+  &__author {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 44px;
+  }
+}
+
+// social
+.social {
+  &__social-icon {
+    width: 30px;
+    margin: 0 5px;
+    @include mq(s) {
+      width: 46px;
+      margin: 0 13px;
+    }
+  }
+}
+
+// footer
+.footer {
+  background: $bright-bg-color;
+  padding: $section-padding;
+  color: $dark-bg-color;
+  &__wrapper {
+    @include section-wrapper;
+    @include grid;
+  }
+  &__column {
+    @include column;
+    @include mq(m) {
+      flex-basis: 25%;
+    }
+  }
+}
