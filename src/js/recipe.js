@@ -4,7 +4,7 @@ class Recipe {
     this.appId = "7bdfdb31";
     this.linkFrom = Math.floor(Math.random() * 9);
     this.linkTo = this.linkFrom + 1;
-    this.apiUrl = `http://api.edamam.com/search?q=chicken&app_id=${this.appId}&app_key=${this.apiKey}&cuisinetype=Indian&from=${this.linkFrom}&to=${this.linkTo}`;
+    this.apiUrl = `https://api.edamam.com/search?q=chicken&app_id=${this.appId}&app_key=${this.apiKey}&cuisinetype=Indian&from=${this.linkFrom}&to=${this.linkTo}`;
     this.recipeEl = document.querySelector(".recipe");
     this.titleEl = document.querySelector(".recipe__title");
     this.imageEl = document.querySelector(".recipe__image");
