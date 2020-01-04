@@ -230,6 +230,80 @@
     height: 32px;
   }
 }
+// recipes
+.recipes {
+  background-color: $dark-bg-color;
+  padding: $section-padding;
+  position: relative;
+  &__wrapper {
+    @include section-wrapper;
+    text-align: center;
+  }
+  &__button {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+  }
+}
+
+.recipe {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  &__column {
+    @include column;
+    @include mq(m) {
+      flex-basis: 50%;
+    }
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__title {
+    text-align: center;
+    @include mq(m) {
+      text-align: left;
+    }
+  }
+  &__list {
+    list-style-type: none;
+    font-size: 1.4rem;
+    text-align: center;
+    @include mq(m) {
+      text-align: left;
+    }
+  }
+  &__list-item {
+    margin-bottom: 7px;
+  }
+}
+
+//spinner
+@keyframes spinner-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: $headers-color 30px solid;
+  border-left: darken($headers-color, 10%) 30px solid;
+  background: none;
+  position: absolute;
+  @include block-center;
+  animation: spinner-rotation 3s infinite;
+  display: none;
+  &--visible {
+    display: block;
+  }
+}
 
 // dishes
 .dishes {
