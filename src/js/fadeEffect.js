@@ -28,7 +28,7 @@ const handleScroll = e => {
       !section.classList.contains("active")
     ) {
       section.classList += " active";
-      console.log("brawo");
+      // console.log("brawo");
     }
   });
 };
