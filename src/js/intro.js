@@ -5,7 +5,7 @@ const show = () => {
   const tl = new TimelineMax({ repeat: 0 });
   const ornament = document.querySelectorAll(".intro__wrapper");
   tl.set(ornament, { opacity: 0 }).staggerTo(ornament, 1.5, {
-    opacity: 1
+    opacity: 1,
   });
   return tl;
 };
@@ -14,7 +14,7 @@ const rotation = () => {
   const tl = new TimelineMax({ repeat: -1, yoyo: true });
   const arcs = document.querySelector(".intro__outerArcs");
   tl.set(arcs, { transformOrigin: "50% 50%" }).to(arcs, 10, {
-    rotate: 360
+    rotate: 360,
   });
   return tl;
 };
@@ -37,7 +37,7 @@ const dots = () => {
     dots,
     1,
     {
-      stroke: color
+      stroke: color,
     },
     0.5
   );
@@ -49,9 +49,9 @@ const main = new TimelineMax();
 
 main.add(show());
 main.add("start");
-main.add(dots(), "start");
+// main.add(dots(), "start");
 main.add(rotation(), "start");
-main.add(button(), "start");
+// main.add(button(), "start");
 
 const intro = document.querySelector(".intro");
 intro.addEventListener("click", () => {

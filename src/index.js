@@ -3,3 +3,4 @@ import "./js/showMenu";
 import "./js/fadeEffect";
 import "./js/recipe";
 import "./js/intro";
+import "./js/scroll";

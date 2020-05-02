@@ -82,7 +82,7 @@
   }
   &__item {
     text-align: right;
-    margin-right: 50px;
+    margin-right: 30px;
     margin-bottom: 15px;
   }
 
@@ -97,18 +97,15 @@
 
   &__wrapper {
     display: none;
+    transition: $transition;
   }
 
   &__mobile {
     color: white;
     text-decoration: none;
-    z-index: 1;
     font-size: 25px;
     font-weight: bold;
-    position: fixed;
-    right: 50px;
-    top: 90px;
-    z-index: 3;
+    z-index: 2;
     background-color: $headers-color;
     padding: 15px;
     &:hover {
@@ -116,7 +113,10 @@
       transition: $transition;
     }
   }
-  &__responsive {
+}
+
+.nav__responsive {
+  .nav__wrapper {
     width: 100%;
     background: $headers-color;
     display: block;
@@ -124,8 +124,20 @@
     z-index: 3;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 75%;
     height: 100%;
+    @include mq(s) {
+      width: 50%;
+    }
+    @include mq(l) {
+      width: 25%;
+    }
+  }
+  .nav__mobile {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    z-index: 4;
   }
 }
 
@@ -142,7 +154,7 @@
   }
   &__btn {
     background-color: $headers-color;
-    padding: 24px 17px;
+    padding: 20px 30px;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2rem;
@@ -242,7 +254,7 @@
   &__button {
     margin: 30px auto;
     background-color: $headers-color;
-    padding: 24px 17px;
+    padding: 20px 30px;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2rem;
@@ -259,6 +271,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-basis: 100%;
+
   &__column {
     @include column;
     @include mq(m) {
@@ -269,6 +282,8 @@
     display: block;
     width: 100%;
     height: auto;
+    max-width: 300px;
+    margin: 0 auto;
   }
   &__title {
     text-align: center;
@@ -278,14 +293,14 @@
   }
   &__list {
     list-style-type: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
     @include mq(m) {
       text-align: left;
     }
   }
   &__list-item {
-    margin-bottom: 7px;
+    margin-bottom: 0.75em;
   }
 }
 
@@ -298,6 +313,10 @@
     transform: rotate(360deg);
   }
 }
+.spinner-wrapper {
+  position: absolute;
+  @include block-center;
+}
 .spinner {
   width: 200px;
   height: 200px;
@@ -305,8 +324,6 @@
   border: $headers-color 30px solid;
   border-left: darken($headers-color, 10%) 30px solid;
   background: none;
-  position: absolute;
-  @include block-center;
   animation: spinner-rotation 3s infinite linear;
   display: none;
   &--visible {
@@ -335,7 +352,7 @@
   }
   &__column {
     flex-basis: 50%;
-    @include mq(l) {
+    @include mq(s) {
       flex-basis: 25%;
     }
   }
@@ -402,7 +419,7 @@
   &__column {
     @include column;
     padding: 0;
-    @include mq(m) {
+    @include mq(s) {
       flex-basis: 50%;
     }
   }
@@ -470,7 +487,7 @@
     @include column;
     flex-wrap: wrap;
     display: flex;
-    @include mq(m) {
+    @include mq(s) {
       flex-basis: 33%;
     }
   }
@@ -535,7 +552,7 @@
   @include grid;
   &__column {
     @include column;
-    @include mq(m) {
+    @include mq(s) {
       flex-basis: 33%;
     }
   }
@@ -546,6 +563,7 @@
     background: $primary-color;
     padding: 25px;
     color: $dark-bg-color;
+    min-height: 300px;
   }
   &__meta {
     font-size: 1.4rem;
@@ -631,43 +649,67 @@
     transform: translate(-50%, -50%);
   }
 
-  &__text {
-    font-size: 2rem;
+  &__title {
+    font-family: $secondary-font;
+    font-size: 3.5rem;
     text-align: center;
-    text-transform: uppercase;
-    line-height: 120%;
-    font-weight: bold;
+    line-height: 100%;
+    // font-weight: bold;
+    @include mq(s) {
+      font-size: 4.5rem;
+    }
     @include mq(m) {
-      font-size: 3.5rem;
+      font-size: 6rem;
     }
   }
 
-  &__button {
-    background-color: $headers-color;
-    padding: 10px 15px;
+  &__subtitle {
+    font-size: 2.5rem;
+    text-align: center;
     text-transform: uppercase;
-    font-size: 1rem;
-    color: $primary-color;
-    margin-top: 10px;
-    border-radius: 10px;
-    @include mq(m) {
-      font-size: 1.5rem;
-      margin-top: 25px;
-      padding: 15px 25px;
+    line-height: 100%;
+    font-weight: bold;
+    color: $headers-color;
+    @include mq(s) {
+      font-size: 3.5rem;
     }
-    &:hover {
-      background-color: darken($headers-color, 10%);
-      color: white;
-      transition: $transition;
+    @include mq(m) {
+      font-size: 5rem;
     }
   }
+
+  &__welcome {
+    text-align: center;
+    border-top: 1px solid white;
+    padding-top: 0.5em;
+    margin-top: 0.5em;
+    letter-spacing: 1px;
+    @include mq(s) {
+      font-size: 1.5rem;
+      padding-top: 1em;
+      margin-top: 1em;
+    }
+    @include mq(m) {
+      font-size: 2rem;
+      padding-top: 1em;
+      margin-top: 1em;
+    }
+  }
+
   &__ornament {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    @include mq(s) {
+      max-width: 600px;
+    }
+    @include mq(l) {
+      max-width: 800px;
+    }
   }
   &__outerArcs {
     fill: $headers-color;
@@ -697,7 +739,7 @@
   }
   &__column {
     @include column;
-    @include mq(m) {
+    @include mq(s) {
       flex-basis: 25%;
     }
   }

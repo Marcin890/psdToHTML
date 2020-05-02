@@ -12,7 +12,7 @@ $primary-font: "Raleway", sans-serif;
 $secondary-font: "Cookie", cursive;
 
 // trasition
-$transition: 0.8s;
+$transition: 0.3s;
 
 // opacity
 $opacity: 0.9;
@@ -71,20 +71,20 @@ $section-padding: 90px 0;
 // breakpoints
 $breakpoints: (
   xs: (
-    min-width: 460px
+    min-width: 460px,
   ),
   s: (
-    min-width: 640px
+    min-width: 640px,
   ),
   m: (
-    min-width: 800px
+    min-width: 800px,
   ),
   l: (
-    min-width: 1024px
+    min-width: 1024px,
   ),
   xl: (
-    min-width: 1200px
-  )
+    min-width: 1200px,
+  ),
 );
 
 // media query
